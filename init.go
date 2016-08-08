@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"strconv"
-	"time"
 
 	"github.com/wallnutkraken/NoteSystem/Constant"
 )
@@ -16,7 +14,7 @@ var (
 )
 
 func initLog() {
-	logname := strconv.FormatInt(time.Now().UTC().UnixNano(), 10) + "_logfile.txt"
+	logname := timeStr() + "_logfile.txt"
 	if !fileExists(Constant.LogDir) {
 		err := os.Mkdir(Constant.LogDir, os.ModeDir)
 		if err != nil {
@@ -33,12 +31,10 @@ func initLog() {
 func init() {
 	initLog()
 	/* Check if a NoteSystem data dir exists */
-	if _, err := os.Stat(Constant.DataPath); err != nil {
-		if os.IsNotExist(err) {
-			err = createFilesystem()
-			if err != nil {
-				panic(fmt.Sprintln("Could not create filesystem:", err))
-			}
+	if !fileExists(Constant.DataPath) {
+		err := createFilesystem()
+		if err != nil {
+			panic(fmt.Sprintln("Could not create filesystem:", err))
 		}
 	}
 }
