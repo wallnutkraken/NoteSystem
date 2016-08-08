@@ -5,9 +5,9 @@ Small (###) - Subtask
 Note (code)
 
 # Create user
-## Create user directory
-## Register user in users file
-### Have a users file(s)/db
+## Create user directory [Done]
+## Register user in users file [Hold]
+### Have a users file(s)/db [Hold]
 
 # Initialization
 ## Create all initial directories and files
