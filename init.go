@@ -47,7 +47,9 @@ func createFilesystem() error {
 	if err := os.Mkdir(Constant.DataPath, os.ModeDir); err != nil {
 		return err
 	}
-
+	if err := os.Mkdir(Constant.DataPath+"/"+Constant.UsersDir, os.ModeDir); err != nil {
+		return err
+	}
 	return nil
 }
 

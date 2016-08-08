@@ -8,7 +8,7 @@ import (
 )
 
 type metadataFile struct {
-	UsersDir string
+	APIVersion string
 }
 
 func writeStruct(filePath string, content interface{}) error {
