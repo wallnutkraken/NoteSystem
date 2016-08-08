@@ -9,11 +9,11 @@ Note (code)
 ## Register user in users file [Hold]
 ### Have a users file(s)/db [Hold]
 
-# Initialization
-## Create all initial directories and files
-### Create users directory
+# Initialization [In Progress]
+## Create all initial directories and files 
+### Create users directory [Done]
 ### Create template user in that directory
 
-# Note -> Parent
+# Note -> ParentW
 ## Turn note file into directory
 ### Said directory should contain the 'root' of that parent, which is the original note
