@@ -34,7 +34,7 @@ func init() {
 	if !fileExists(Constant.DataPath) {
 		err := createFilesystem()
 		if err != nil {
-			panic(fmt.Sprintln("Could not create filesystem:", err))
+			logger.Fatalln("Could not create filesystem:", err)
 		}
 	}
 }
