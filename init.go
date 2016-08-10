@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/wallnutkraken/NoteSystem/Constant"
+	"github.com/wallnutkraken/NoteSystem/Helpers"
 )
 
 var (
@@ -43,7 +44,7 @@ func createFilesystem() error {
 	if err := os.Mkdir(Constant.DataPath, os.ModeDir); err != nil {
 		return err
 	}
-	if err := os.Mkdir(Constant.DataPath+"/"+Constant.UsersDir, os.ModeDir); err != nil {
+	if err := os.Mkdir(Helpers.PathBuilder(Constant.DataPath, Constant.UsersDir), os.ModeDir); err != nil {
 		return err
 	}
 	return nil

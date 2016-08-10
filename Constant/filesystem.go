@@ -2,8 +2,9 @@ package Constant
 
 const (
 	DataPath      = "NoteSystem_data"
-	MetadataFile  = ".meta"
+	MetadataFile  = ".notemeta"
 	LogDir        = "Logs"
 	UsersDir      = "Users"
 	UsersNotesDir = "Notes"
+	DataFilename  = "content"
 )
