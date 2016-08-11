@@ -1,19 +1,21 @@
 # Legend
+
 Big (#) - Major task
+
 Medium (##) - Task
+
 Small (###) - Subtask
+
 Note (code)
 
 # Create user
 ## Create user directory [Done]
-## Register user in users file [Hold]
-### Have a users file(s)/db [Hold]
 
 # Initialization [In Progress]
-## Create all initial directories and files 
+## Create all initial directories and files [Done]
 ### Create users directory [Done]
-### Create template user in that directory
+### Create template user in that directory [In Progress]
 
-# Note -> ParentW
-## Turn note file into directory
-### Said directory should contain the 'root' of that parent, which is the original note
+# Note -> ParentW [In Progress]
+
+#Note permissions
