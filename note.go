@@ -47,31 +47,31 @@ type Note interface {
 	GetChild(name string) (Note, error)
 }
 
-func (m *internalNote) File() *os.File {
+func (m internalNote) File() *os.File {
 	return m.file
 }
 
-func (m *internalNote) Content() []rune {
+func (m internalNote) Content() []rune {
 	return m.content
 }
 
-func (m *internalNote) Owner() string {
+func (m internalNote) Owner() string {
 	return m.metadata.owner
 }
 
-func (m *internalNote) LastModified() time.Time {
+func (m internalNote) LastModified() time.Time {
 	return m.metadata.lastModified
 }
 
-func (m *internalNote) Created() time.Time {
+func (m internalNote) Created() time.Time {
 	return m.metadata.created
 }
 
-func (m *internalNote) MetadataJSON(file *os.File) error {
+func (m internalNote) MetadataJSON(file *os.File) error {
 	return json.NewEncoder(file).Encode(m.metadata)
 }
 
-func (m *internalNote) Children() ([]string, error) {
+func (m internalNote) Children() ([]string, error) {
 	fileInfo, err := ioutil.ReadDir(m.path)
 	if err != nil {
 		return nil, err
@@ -85,12 +85,12 @@ func (m *internalNote) Children() ([]string, error) {
 	return children, nil
 }
 
-func (m *internalNote) PathTo() string {
+func (m internalNote) PathTo() string {
 	return m.path
 }
 
 // GetChild returns the Note object for the first child with the given name
-func (m *internalNote) GetChild(name string) (Note, error) {
+func (m internalNote) GetChild(name string) (Note, error) {
 	newNote := internalNote{path: Helpers.PathBuilder(m.path, name)}
 	fileBytes, err := ioutil.ReadFile(Helpers.PathBuilder(m.PathTo(), name, Constant.DataFilename))
 	if err != nil {
