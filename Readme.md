@@ -1,4 +1,3 @@
-# Writes App
-[License](docs/License.md)
+# NoteSystem
 
-[Todo](docs/To-Do.md)
+A filesystem configuration for notes. Not an actual FS.
